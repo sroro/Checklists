@@ -9,10 +9,24 @@ import UIKit
 
 class ChecklistViewControllerViewController: UITableViewController {
     
+    // MARK: - Methods
     @IBAction func addItem(_ sender: Any) {
         
+        let newRowIndex = items.count
+        
+        //add new item in items array
+        let item = ChecklistItem()
+        item.text = "I'm new element"
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        
+        //with: .left add a animation when add new row
+        tableView.insertRows(at: indexPaths, with: .left)
+                
     }
-    
+    // MARK: - Properties
     var items = [ChecklistItem]()
     
     override func viewDidLoad() {
@@ -65,8 +79,6 @@ class ChecklistViewControllerViewController: UITableViewController {
     }
     
     
-    
-    
     // MARK: - tableview delegate
     
     // deselectionne la cellule touché change le checkmark
@@ -80,6 +92,15 @@ class ChecklistViewControllerViewController: UITableViewController {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .fade)
+    }
+    
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         
