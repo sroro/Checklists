@@ -93,7 +93,7 @@ class ChecklistViewControllerViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
+    // delete row with swipe. swipe is working with : commit editingStyle: UITableViewCell.EditingStyle
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,forRowAt indexPath: IndexPath) {
         items.remove(at: indexPath.row)
         
