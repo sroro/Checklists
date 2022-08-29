@@ -17,14 +17,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CheckListItem" id="Kmi-nY-3lZ">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kmi-nY-3lZ" id="ae6-cj-58Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3x-Uc-04b">
-                                            <rect key="frame" x="20" y="11" width="345.5" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="345.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -59,30 +59,58 @@
         <!--Add Item-->
         <scene sceneID="9XZ-oY-iCW">
             <objects>
-                <tableViewController id="jRi-7y-tLx" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Mog-MN-N1Q">
+                <tableViewController id="jRi-7y-tLx" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Mog-MN-N1Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rYf-Y8-g2C">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rYf-Y8-g2C" id="UJ2-me-JXk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="hii-sW-2ro">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rYf-Y8-g2C">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="29"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rYf-Y8-g2C" id="UJ2-me-JXk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Npg-Ya-dBg">
+                                                    <rect key="frame" x="5" y="5" width="404" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Npg-Ya-dBg" firstAttribute="leading" secondItem="UJ2-me-JXk" secondAttribute="leading" constant="5" id="IJr-jh-ZDR"/>
+                                                <constraint firstAttribute="bottom" secondItem="Npg-Ya-dBg" secondAttribute="bottom" constant="5" id="aNV-Sq-MRD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Npg-Ya-dBg" secondAttribute="trailing" constant="5" id="bGx-Jb-tSf"/>
+                                                <constraint firstItem="Npg-Ya-dBg" firstAttribute="top" secondItem="UJ2-me-JXk" secondAttribute="top" constant="5" id="c9e-Gk-ajD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="jRi-7y-tLx" id="Kcy-ib-E4c"/>
                             <outlet property="delegate" destination="jRi-7y-tLx" id="rqX-xa-c4P"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="zQd-gA-70W">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9db-Ue-gu9"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="690-Zf-wd2"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9db-Ue-gu9">
+                            <connections>
+                                <action selector="cancelButton:" destination="jRi-7y-tLx" id="v6C-rw-3ba"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="690-Zf-wd2">
+                            <connections>
+                                <action selector="doneButton:" destination="jRi-7y-tLx" id="cmw-Zs-ufC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="Npg-Ya-dBg" id="ddh-Q1-DK5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kn6-2g-Egw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
